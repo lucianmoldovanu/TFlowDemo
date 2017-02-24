@@ -4,7 +4,7 @@ FROM tensorflow/tensorflow:1.0.0
 RUN mkdir -p /usr/src/api
 COPY api.js /usr/src/api/api.js
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN sudo apt-get update && apt-get install -y --no-install-recommends \
   nodejs \
   npm
 
