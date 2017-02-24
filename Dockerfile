@@ -11,6 +11,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   nodejs \
   npm
 
+RUN npm install \
+  express \
+  child_process \
+  fs
+
 # Bundle app source
 #COPY /app /usr/src/app
 
