@@ -4,9 +4,6 @@ FROM tensorflow/tensorflow:1.0.0
 #RUN mkdir -p /usr/src/app
 #WORKDIR /usr/src/app
 
-# Install app dependencies
-COPY ./app.js /test/
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
   nodejs \
   npm
@@ -18,6 +15,7 @@ RUN npm install -g \
 
 # Bundle app source
 #COPY /app /usr/src/app
+COPY ./app.js /root/
 
 # TensorBoard
 EXPOSE 6006
@@ -29,4 +27,4 @@ EXPOSE 7000
 WORKDIR "/notebooks"
 
 #CMD ["/run_jupyter.sh"]
-CMD ["nodejs /test/api.js"]
+CMD ["nodejs /root/api.js"]
