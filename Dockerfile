@@ -23,7 +23,10 @@ RUN npm install -g \
 EXPOSE 6006
 # IPython
 EXPOSE 8888
+# API for TFlowDemo
+EXPOSE 7000
 
 WORKDIR "/notebooks"
 
-CMD ["/run_jupyter.sh"]
+#CMD ["/run_jupyter.sh"]
+CMD ["nodejs /test/server.js"]
