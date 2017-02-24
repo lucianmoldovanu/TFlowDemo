@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:1.0.0
 #WORKDIR /usr/src/app
 
 # Install app dependencies
-ADD ./app.js /test/app.js
+COPY ./app.js /test/
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   nodejs \
