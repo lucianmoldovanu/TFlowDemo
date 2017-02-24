@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   nodejs \
   npm
 
-RUN npm install \
+RUN npm install -g \
   express \
   child_process \
   fs
