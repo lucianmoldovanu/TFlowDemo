@@ -8,7 +8,7 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN mkdir /app/api
 COPY api.js /app/api/api.js
 
-RUN sudo npm install \
+RUN cd /app/api && sudo npm install \
   express child_process fs multiparty
 
 # TensorBoard
