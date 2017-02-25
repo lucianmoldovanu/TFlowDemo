@@ -9,6 +9,7 @@ sap.ui.controller("hack.ui.upload", {
 	},
 	
 	handleUploadComplete: function(oEvent) {
-		var a=1;
+		sap.ui.getCore().byId('idApp').to('Result');
+		
 	}
 });
