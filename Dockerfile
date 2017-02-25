@@ -5,10 +5,10 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 
 #Create and deploy API (NodeJS app)
 #RUN mkdir -p /usr/src/api && cd /usr/src/api/ && git init && git clone https://84745ee677026aedaa5b6ce060d9d6eeb22e103f@github.com/lucianmoldovanu/TFlowDemo.git
-RUN mkdir -p /app/api
-COPY api.js /app/api/api.js
+RUN mkdir -p /app
+COPY /app /app
 
-RUN cd /app/api && sudo npm install \
+RUN cd /app && sudo npm install \
   express child_process fs multiparty
 
 # TensorFlowDemo (webapp & REST endpoint)
