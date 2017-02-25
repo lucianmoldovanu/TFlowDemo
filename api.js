@@ -1,19 +1,23 @@
 const express = require('express');
 var exec = require('child_process').exec
 var fs = require('fs');
-
+var mp = require('multiparty')
 const app = express();
 
 app.post('/classifyImage', function(req, res) {
-  var imgContent = req.body;
-  var respString = '';
+    var form = new mp.Form();
+    //console.log('received...');
+    form.parse(req, function(err, fields, files) {
+        var imgPath = files['picture'][0].path;
+        console.log(imgPath);
 
-  fs.writeFile("/test/tempImage.jpg", req.body); //synchronous
-  exec('python icecat_classify.py --model_file output_graph.pb --label_file output_labels.txt --softmax_layer final_result --image_file test_banana.jpg',
-    function(error, stdout, stderr) {
-      res.send(respString + "|" + stdout + "|" + stderr);
-    }
-  );
+        exec('python /usr/src/api/icecat_classify.py --model_file /usr/src/api/output_graph.pb --label_file /usr/src/api/output_labels.txt --softmax_layer final_result --image_file ' + imgPath,
+            function(error, stdout, stderr) {
+                console.log([error,stdout,stderr].join(" | "));
+            }
+        );
+    });
 });
 
 app.listen(7000);
+console.log('Running on http://localhost:7000');
