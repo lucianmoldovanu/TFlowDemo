@@ -3,7 +3,7 @@
 	<l:VerticalLayout width="100%">
 
 		<u:FileUploader id="fileUploader" name="myFileUpload" width="400px"
-			uploadUrl="./uploadBackend"
+			uploadUrl="./classifyPicture"
 			tooltip="Upload your file to the local server"
 			uploadComplete="handleUploadComplete"
 			uploadOnChange="true"
