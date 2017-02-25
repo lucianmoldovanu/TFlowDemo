@@ -30,4 +30,4 @@ app.post('/classifyImage', function(req, res) {
 });
 
 app.listen(7000);
-console.log('Running on http://localhost:7000... REST endpoint: / ; webapp: /);
+console.log('Running on http://localhost:7000... REST endpoint: /classifyImage ; webapp: /');
