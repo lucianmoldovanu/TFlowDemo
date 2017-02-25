@@ -11,10 +11,11 @@ COPY api.js /app/api/api.js
 RUN cd /app/api && sudo npm install \
   express child_process fs multiparty
 
-EXPOSE 7000 # API for TFlowDemo
+# TensorFlowDemo (webapp & REST endpoint)
+EXPOSE 7000
 # TensorBoard (6006) and iPython (8888) are already exposed
 
 WORKDIR "/notebooks"
 
 #CMD ["/run_jupyter.sh"]
-CMD ["nodejs /app/api/api.js"]
+CMD ["nodejs /app/server.js"]
