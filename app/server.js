@@ -1,8 +1,8 @@
 const express = require('express');
-const exec = require('child_process').exec
+const exec = require('child_process').exec;
 const fs = require('fs');
 const mp = require('multiparty');
-from os import path
+const path = require('path');
 
 const app = express();
 
@@ -30,4 +30,4 @@ app.post('/classifyImage', function(req, res) {
 });
 
 app.listen(7000);
-console.log('Running on http://localhost:7000');
+console.log('Running on http://localhost:7000... REST endpoint: / ; webapp: /);
