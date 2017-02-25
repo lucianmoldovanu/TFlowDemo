@@ -1,0 +1,20 @@
+<core:View height="100%" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout"
+	controllerName="hack.ui.upload">
+	<l:VerticalLayout width="100%">
+
+		<u:FileUploader id="fileUploader" name="myFileUpload" width="400px"
+			uploadUrl="./uploadBackend"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"
+			uploadOnChange="true"
+			buttonText="Upload"
+			useMultipart="false">
+			<u:parameters>
+				<u:FileUploaderParameter name="name" value="value"/>
+			</u:parameters>
+		</u:FileUploader>
+		
+		<!--<Button text="Upload File" press="handleUploadPress"/>-->
+		
+	</l:VerticalLayout>
+</core:View>
