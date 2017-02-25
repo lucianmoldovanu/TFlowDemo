@@ -15,7 +15,7 @@ RUN cd /app && sudo npm install \
 EXPOSE 7000
 # TensorBoard (6006) and iPython (8888) are already exposed
 
-WORKDIR "/notebooks"
+# WORKDIR "/notebooks"
 
 #CMD ["/run_jupyter.sh"]
 CMD ["nodejs /app/server.js"]
