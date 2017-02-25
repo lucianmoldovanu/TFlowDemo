@@ -1,0 +1,2 @@
+<core:View height="100%" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="hack.ui.result">
+</core:View>
