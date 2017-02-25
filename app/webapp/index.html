@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Vegetable Smart Recognition</title>
+
+	<script src="https://sapui5.hana.ondemand.com/1.38.16/resources/sap-ui-core.js" id="sap-ui-bootstrap"
+    	data-sap-ui-libs="sap.m,sap.ui.unified,sap.ui.layout,sap.ui.core"
+    	data-sap-ui-xx-bindingSyntax="complex"
+      	data-sap-ui-theme="sap_bluecrystal"
+      	data-sap-ui-resourceroots='{"hack": "./"}'>
+   	</script>
+    
+    <link type="text/css" href="css/main.css" rel="stylesheet" media="all"/>
+    
+    <script>
+        var oApp = new sap.m.App("idApp", {});
+        
+        var uploadPage = sap.ui.view({
+            id: "Upload",
+            viewName: "hack.ui.Upload",
+            type: sap.ui.core.mvc.ViewType.XML
+        });
+        oApp.addPage(uploadPage);
+        
+        var resultPage = sap.ui.view({
+            id: "Result",
+            viewName: "hack.ui.Result",
+            type: sap.ui.core.mvc.ViewType.XML
+        });
+        oApp.addPage(resultPage);
+        
+        oApp.placeAt("main");
+		
+         // Set device model
+        var oDeviceModel = new sap.ui.model.json.JSONModel({
+            isTouch: sap.ui.Device.support.touch,
+            isNoTouch: !sap.ui.Device.support.touch,
+            isPhone: sap.ui.Device.system.phone,
+            isNoPhone: !sap.ui.Device.system.phone,
+            listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
+            listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
+        });
+        //oDeviceModel.setDefaultBindingMode("OneWay");
+        oApp.setModel(oDeviceModel, "device");
+		
+        var oDummyModel = new sap.ui.model.json.JSONModel();
+         //oDummyModel.setDefaultBindingMode("OneWay");
+        oApp.setModel(oDummyModel);
+    </script>
+</head>
+
+<body class="sapUiBody" role="application" ondragstart="return false;" ondrop="return false;">
+    <div id="main" class="main"></div>
+</body>
+
+</html>
