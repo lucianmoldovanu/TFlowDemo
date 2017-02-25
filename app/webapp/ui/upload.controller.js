@@ -10,6 +10,6 @@ sap.ui.controller("hack.ui.upload", {
 	
 	handleUploadComplete: function(oEvent) {
 		sap.ui.getCore().byId('idApp').to('Result');
-		
+		sap.ui.controller('hack.ui.result').createDataModel(oEvent.getParameter('response').split('\n'));
 	}
 });
