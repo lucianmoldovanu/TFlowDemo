@@ -11,7 +11,7 @@ app.post('/classifyImage', function(req, res) {
         var imgPath = files['picture'][0].path;
         console.log(imgPath);
 
-        exec('python /model/icecat_classify.py --model_file /model/output_graph.pb --label_file /model/output_labels.txt --softmax_layer final_result --image_file ' + imgPath,
+        exec('python /app/tf/icecat_classify.py --model_file /app/tf/output_graph.pb --label_file /app/tf/output_labels.txt --softmax_layer final_result --image_file ' + imgPath,
             function(error, stdout, stderr) {
                 console.log([error,stdout,stderr].join(" | "));
             }
