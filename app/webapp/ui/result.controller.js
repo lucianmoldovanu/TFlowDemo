@@ -1,5 +1,8 @@
 sap.ui.controller("hack.ui.result", {
-	onInit: function(oController) {
-
-	},
+	createDataModel: function(aData) {
+		var oData = aData.map(function(rec) {return {row: rec}});
+		var oModel = new sap.ui.model.json.JSONModel(oData);
+		this.getView().byId("idTable").setModel(oModel);
+		oModel.refresh();
+	}
 });
