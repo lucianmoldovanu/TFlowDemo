@@ -5,7 +5,7 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 
 #Create and deploy API (NodeJS app)
 #RUN mkdir -p /usr/src/api && cd /usr/src/api/ && git init && git clone https://84745ee677026aedaa5b6ce060d9d6eeb22e103f@github.com/lucianmoldovanu/TFlowDemo.git
-#COPY api.js /usr/src/api/api.js
+COPY api.js /usr/src/api/api.js
 
 RUN sudo npm install \
   express child_process fs multiparty
