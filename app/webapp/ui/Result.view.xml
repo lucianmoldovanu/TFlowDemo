@@ -1,2 +1,16 @@
 <core:View height="100%" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="hack.ui.result">
+  <Table id="idProductsTable" items="{path: '/data'}">
+    <columns>
+      <Column>
+        <Text text="Products"/>
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          <ObjectIdentifier text="{row}"/>
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
 </core:View>
