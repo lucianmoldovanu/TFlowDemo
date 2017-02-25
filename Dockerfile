@@ -11,12 +11,8 @@ COPY api.js /app/api/api.js
 RUN cd /app/api && sudo npm install \
   express child_process fs multiparty
 
-# TensorBoard
-EXPOSE 6006
-# IPython
-EXPOSE 8888
-# API for TFlowDemo
-EXPOSE 7000
+EXPOSE 7000 # API for TFlowDemo
+# TensorBoard (6006) and iPython (8888) are already exposed
 
 WORKDIR "/notebooks"
 
