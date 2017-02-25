@@ -18,4 +18,4 @@ EXPOSE 7000
 # WORKDIR "/notebooks"
 
 #CMD ["/run_jupyter.sh"]
-CMD ["nodejs /app/server.js"]
+CMD ["nodejs", "/app/server.js"]
