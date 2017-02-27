@@ -1,8 +1,9 @@
 <core:View height="100%" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout"
 	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="hack.ui.upload">
-	<l:VerticalLayout width="100%">
+	<l:HorizontalLayout>
 	
-	<u:FileUploader id="fileUploader" name="myFileUpload" width="400px"
+	<l:VerticalLayout width="500px">
+	<u:FileUploader id="fileUploader" name="myFileUpload" width="500px"
 		uploadUrl="./classifyImage"
 		tooltip="Upload your file to the local server"
 		uploadComplete="handleUploadComplete"
@@ -11,24 +12,23 @@
 		useMultipart="false">
 	</u:FileUploader>
 	
-	<l:HorizontalLayout>
-		<Table id="idProductsTable" items="{path: '/data'}" width="500px">
-			<columns>
-				<Column>
-					<Text text="Products"/>
-				</Column>
-			</columns>
-			<items>
-				<ColumnListItem>
-					<cells>
-						<ObjectIdentifier text="{row}"/>
-					</cells>
-				</ColumnListItem>
-			</items>
-		</Table>
-		
-		<html:div id="wordCloud"></html:div>
-	</l:HorizontalLayout>
-	
+	<Table id="idProductsTable" items="{path: '/data'}">
+		<columns>
+			<Column>
+				<Text text="Products"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier text="{row}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 	</l:VerticalLayout>
+	
+	<html:div id="wordCloud"></html:div>
+	
+	</l:HorizontalLayout>
 </core:View>
