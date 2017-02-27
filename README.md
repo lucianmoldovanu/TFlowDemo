@@ -1,7 +1,8 @@
 ### TFlowDemo
 
 ## Prerequisites:
-Docker installed on local machine
+* Docker installed on local machine
+* model available (see files under /app/tf/ below)
 
 ## Steps
 * _docker pull lucianmol/tflowdemo_
