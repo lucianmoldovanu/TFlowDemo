@@ -26,15 +26,8 @@
         });
         oApp.addPage(uploadPage);
         
-        var resultPage = sap.ui.view({
-            id: "Result",
-            viewName: "hack.ui.Result",
-            type: sap.ui.core.mvc.ViewType.XML
-        });
-        oApp.addPage(resultPage);
-        
         oApp.placeAt("main");
-		
+	
          // Set device model
         var oDeviceModel = new sap.ui.model.json.JSONModel({
             isTouch: sap.ui.Device.support.touch,
