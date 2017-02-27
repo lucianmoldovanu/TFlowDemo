@@ -5,7 +5,7 @@ Docker installed on local machine
 
 ## Steps
 * _docker pull lucianmol/tflowdemo_
-* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/vegetables-master/_:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script)
+* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/vegetables-master/:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script)
 * navigate to http://localhost:7000/ in browser on local machine
 
 ## Project structure on Docker machine
