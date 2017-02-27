@@ -2,11 +2,11 @@
 
 ## Prerequisites:
 * Docker installed on local machine
-* model available (see files under /app/tf/ below)
+* TF model and script available on local machine (download link: https://drive.google.com/open?id=0B0JzQeoUHKyDa0RZcHRFMDdreUE)
 
 ## Steps
 * _docker pull lucianmol/tflowdemo_
-* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/vegetables-master/:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script)
+* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/vegetables-master/:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script - see prerequisites above)
 * navigate to http://localhost:7000/ in browser on local machine
 
 ## Project structure on Docker machine
