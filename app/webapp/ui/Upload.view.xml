@@ -11,7 +11,7 @@
 		useMultipart="false">
 	</u:FileUploader>
 
-	<Table id="idProductsTable" items="{path: '/data'}">
+	<Table id="idProductsTable" items="{path: '/data'}" width="500px">
 		<columns>
 			<Column>
 				<Text text="Products"/>
