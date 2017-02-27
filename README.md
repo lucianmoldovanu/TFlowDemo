@@ -9,9 +9,9 @@ Docker installed on local machine
 * navigate to http://localhost:7000/ in browser on local machine
 
 ## Project structure on Docker machine
-/app                          - NodeJS endpoint (/ for webapp and /classifyImage for TF API)
-/app/webapp                   - web application (UI5/NodeJs)
-/app/tf                       - TensorFlow model folder
-/app/tf/icecat_classify.py    - Python script to apply TF model
-/app/tf/output_graph.pb       - TF model
-/app/tf/output_labels.txt     - labels for categories
+/app                          - NodeJS endpoint (/ for webapp and /classifyImage for TF API)<br>
+/app/webapp                   - web application (UI5/NodeJs)<br>
+/app/tf                       - TensorFlow model folder<br>
+/app/tf/icecat_classify.py    - Python script to apply TF model<br>
+/app/tf/output_graph.pb       - TF model<br>
+/app/tf/output_labels.txt     - labels for categories<br>
