@@ -43,8 +43,8 @@ sap.ui.controller("hack.ui.upload", {
 
 		//Construct the word cloud's SVG element
 		var svg = d3.select(selector).append("svg")
-			.attr("width", 500)
-			.attr("height", 500)
+			.attr("width", 300)
+			.attr("height", 300)
 			.append("g")
 			.attr("transform", "translate(250,250)");
 
