@@ -29,7 +29,7 @@ sap.ui.controller("hack.ui.upload", {
 		//prepare word cloud content
 		var words = oData.map((rec) => ({
 			text: rec.row.split(' (')[0],
-			size: 10 + 90 * parseFloat(rec.row.split('(score = ')[1].split(')')[0])
+			size: 20 + parseInt(90 * parseFloat(rec.row.split('(score = ')[1].split(')')[0]))
 		}));
 		
 		//clear previous plot and update with new one
