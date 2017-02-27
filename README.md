@@ -4,9 +4,9 @@
 Docker installed on local machine
 
 ## Steps
-* docker pull lucianmol/tflowdemo
-* docker run -it -p 7000:7000 -v _C:/Users/i311766/Desktop/vegetables-master/_:/app/tf/ lucianmol/tflowdemo
-* http://localhost:7000/ in browser on local machine
+* _docker pull lucianmol/tflowdemo_
+* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/vegetables-master/_:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script)
+* navigate to http://localhost:7000/ in browser on local machine
 
 ## Project structure on Docker machine
 /app                          - NodeJS endpoint (/ for webapp and /classifyImage for TF API)
