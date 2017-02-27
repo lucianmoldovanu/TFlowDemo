@@ -25,6 +25,8 @@
 			</ColumnListItem>
 		</items>
 	</Table>
-		
+
+	<core:HTML content="<div id='wordCloud'/>"/>
+
 	</l:VerticalLayout>
 </core:View>
