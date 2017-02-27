@@ -2,14 +2,29 @@
 	controllerName="hack.ui.upload">
 	<l:VerticalLayout width="100%">
 	
-		<u:FileUploader id="fileUploader" name="myFileUpload" width="400px"
-			uploadUrl="./classifyImage"
-			tooltip="Upload your file to the local server"
-			uploadComplete="handleUploadComplete"
-			uploadOnChange="true"
-			buttonText="Upload"
-			useMultipart="false">
-		</u:FileUploader>
+	<u:FileUploader id="fileUploader" name="myFileUpload" width="400px"
+		uploadUrl="./classifyImage"
+		tooltip="Upload your file to the local server"
+		uploadComplete="handleUploadComplete"
+		uploadOnChange="true"
+		buttonText="Upload"
+		useMultipart="false">
+	</u:FileUploader>
+
+	<Table id="idProductsTable" items="{path: '/data'}">
+		<columns>
+			<Column>
+				<Text text="Products"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier text="{row}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 		
 	</l:VerticalLayout>
 </core:View>
