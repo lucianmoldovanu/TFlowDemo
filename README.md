@@ -1,4 +1,4 @@
-### TFlowDemo
+# TFlowDemo
 
 ## Prerequisites:
 * Docker installed on local machine
