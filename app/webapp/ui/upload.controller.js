@@ -26,13 +26,15 @@ sap.ui.controller("hack.ui.upload", {
 		_oTable.setModel(oModel);
 		oModel.refresh();
 		
-		//populate word cloud
+		//prepare word cloud content
 		var words = oData.map((rec) => ({
 			text: rec.row.split(' (')[0],
-			size: 30 + 70 * parseFloat(rec.row.split('(score = ')[1].split(')')[0])
+			size: 10 + 90 * parseFloat(rec.row.split('(score = ')[1].split(')')[0])
 		}));
 		
-		var divWordCloud = this.wordCloud('wordCloud');
+		//clear previous plot and update with new one
+		d3.select("#Upload--wordCloud")[0][0].innerHTML = "";
+		var divWordCloud = this.wordCloud('#Upload--wordCloud');
 		divWordCloud.update(words);
 	},
 	
