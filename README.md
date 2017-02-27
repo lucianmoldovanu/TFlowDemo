@@ -1,4 +1,4 @@
-# TFlowDemo
+# TensorFlow Demo (Team 3)
 
 ## Prerequisites:
 * Docker installed on local machine
