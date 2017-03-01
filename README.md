@@ -2,7 +2,7 @@
 
 ## Prerequisites:
 * Docker installed on local machine
-* TF model and script available on local machine (download link: https://drive.google.com/open?id=0B0JzQeoUHKyDa0RZcHRFMDdreUE)
+* TF model and script available on local machine ([download link](https://drive.google.com/open?id=0B0JzQeoUHKyDa0RZcHRFMDdreUE))
 
 ## Steps
 * _docker pull lucianmol/tflowdemo_ (Docker image that encapsulates webapp and TensorFlow; ~360MB size)
