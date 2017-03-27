@@ -13,6 +13,9 @@
 * _docker run -it -v C:/Users/i311766/Desktop/iccm-share/:/app/tf/ lucianmol/tflowdemo /bin/bash_
 * _python retrain.py --image_dir Train --model_dir . --testing_percentage 10 --validation_percentage 10 --how_many_training_steps 2000 --train_batch_size 50 --learning_rate 0.01_
 
+## General docker commands
+* clear unused images: _docker rmi $(docker images --filter "dangling=true" -q --no-trunc)_
+
 ## Project structure on Docker machine
 Folder  | Description
 ------- | -------
