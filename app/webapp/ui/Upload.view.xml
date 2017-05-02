@@ -5,7 +5,7 @@
 	<l:VerticalLayout width="500px">
 	<u:FileUploader id="fileUploader" name="myFileUpload" width="500px"
 		uploadUrl="./classifyImage"
-		tooltip="Upload your file to the local server"
+		tooltip="Upload image for inference"
 		uploadComplete="handleUploadComplete"
 		uploadOnChange="true"
 		buttonText="Upload"
