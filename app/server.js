@@ -20,7 +20,7 @@ app.post('/classifyImage', function(req, res) {
         //var imgPath = files['picture'][0].path;
         var imgPath = files['myFileUpload'][0]['path'];
         
-        exec('python /app/tf/icecat_classify.py --model_file /app/tf/output_graph.pb --label_file /app/tf/output_labels.txt --softmax_layer final_result --image_file ' + imgPath,
+        exec('python /app/tf/icecat_classify.py --model_file /tf_files/retrained_graph.pb --label_file /tf_files/retrained_labels.txt --softmax_layer final_result --image_file ' + imgPath,
             function(error, stdout, stderr) {
                 //console.log([error,stdout,stderr].join(" | "));
                 res.send(stdout);
