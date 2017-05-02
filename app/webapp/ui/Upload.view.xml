@@ -28,7 +28,7 @@
 	</Table>
 	</l:VerticalLayout>
 	
-	<html:div id="wordCloud"></html:div>
+	<!--<html:div id="wordCloud"></html:div>-->
 	
 	</l:HorizontalLayout>
 </core:View>
