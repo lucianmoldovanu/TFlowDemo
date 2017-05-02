@@ -26,6 +26,7 @@ sap.ui.controller("hack.ui.upload", {
 		_oTable.setModel(oModel);
 		oModel.refresh();
 		
+		/*
 		//prepare word cloud content
 		var words = oData.map((rec) => ({
 			text: rec.row.split(' (')[0],
@@ -36,6 +37,7 @@ sap.ui.controller("hack.ui.upload", {
 		d3.select("#Upload--wordCloud")[0][0].innerHTML = "";
 		var divWordCloud = this.wordCloud('#Upload--wordCloud');
 		divWordCloud.update(words);
+		*/
 	},
 	
 	wordCloud: function(selector) {
