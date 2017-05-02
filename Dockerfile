@@ -1,7 +1,7 @@
 FROM gcr.io/tensorflow/tensorflow:latest-devel
 #tensorflow/tensorflow:1.0.0
 
-RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
   nodejs npm #git
 
 #Create and deploy API (NodeJS app)
@@ -9,7 +9,7 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN mkdir /app
 COPY /app /app
 
-RUN cd /app && sudo npm install \
+RUN cd /app && npm install \
   express child_process fs multiparty
 
 # TensorFlowDemo (webapp & REST endpoint)
