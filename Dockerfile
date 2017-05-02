@@ -1,4 +1,5 @@
-FROM tensorflow/tensorflow:1.0.0
+FROM gcr.io/tensorflow/tensorflow:latest-devel
+#tensorflow/tensorflow:1.0.0
 
 RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
   nodejs npm #git
