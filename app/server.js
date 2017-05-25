@@ -29,5 +29,5 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-app.listen(80);
-console.log('Running on http://localhost:80... REST endpoint: /classifyImage ; webapp: /');
+app.listen(443);
+console.log('Running on http://localhost:443... REST endpoint: /classifyImage ; webapp: /');
