@@ -2,26 +2,36 @@
 
 ## Prerequisites:
 * Docker installed on local machine
-* TF model and script available on local machine ([download link](https://drive.google.com/open?id=0B0JzQeoUHKyDa0RZcHRFMDdreUE))
-
-## Steps (inference)
+* training must be run before inference
 * _docker pull lucianmol/tflowdemo_ (Docker image that encapsulates webapp and TensorFlow; ~360MB size)
-* _docker run -it -p 7000:7000 -v C:/Users/i311766/Desktop/iccm-share/:/app/tf/ lucianmol/tflowdemo_ (replace C:/Users/i311766/Desktop/vegetables-master/ with path to local folder which contains TF model and script - see prerequisites above)
-* navigate to http://localhost:7000/ in browser on local machine
 
-## Steps (training)
-* _docker run -it -v C:/Users/i311766/Desktop/iccm-share/:/app/tf/ lucianmol/tflowdemo /bin/bash_
-* _python retrain.py --image_dir Train --model_dir . --testing_percentage 10 --validation_percentage 10 --how_many_training_steps 2000 --train_batch_size 50 --learning_rate 0.01_
+## Trainig
+* _docker run -it -v "C:/Lucian/Projects/## 2017/2017.03 InnovChallenge/anomaly_data/anomalyWork":/tf_files lucianmol/tflowdemo bash_
+*   _cd /tensorflow_
+*   _git pull_
+*   _python tensorflow/examples/image_retraining/retrain.py --bottleneck_dir=/tf_files/bottlenecks --how_many_training_steps 300 --model_dir=/tf_files/inception --output_graph=/tf_files/retrained_graph.pb --output_labels=/tf_files/retrained_labels.txt --image_dir /tf_files/Train --summaries_dir /tf_files/summary_
+
+## Inference (via CLI, inside Docker container)
+*   _cd /_
+* for one file: _python /tf_files/label_image.py /tf_files/Test/abnormal/84ec3e92.jpg_
+* for an entire folder: _python /tf_files/label_image2_docker.py /tf_files/Test_
+* _exit_
+
+## Inference (via webapp, outside Docker container)
+* _docker run -it -p 3000:3000 -p 6006:6006 -v "C:/Lucian/Projects/## 2017/2017.03 InnovChallenge/anomaly_data/anomalyWork":/tf_files lucianmol/tflowdemo_ (replace with path to local folder which contains model and script, as per the above prerequisites)
+* navigate to http://localhost:3000/ in browser on the local machine (outside container)
 
 ## General docker commands
 * clear unused images: _docker rmi $(docker images --filter "dangling=true" -q --no-trunc)_
 
 ## Project structure on Docker machine
-Folder  | Description
+Folder | Description
 ------- | -------
-/app    | NodeJS endpoint (/ for webapp and /classifyImage for TF API)<br>
+/app | NodeJS endpoint (/ for webapp and /classifyImage for TF API)<br>
 /app/webapp | web application (UI5/NodeJs)<br>
-/app/tf | TensorFlow model folder<br>
-/app/tf/icecat_classify.py | Python script to apply TF model<br>
-/app/tf/output_graph.pb | TF model<br>
-/app/tf/output_labels.txt | labels for categories<br>
+/tf_files | folder with sub_folders including images in JPG format<br>
+/tf_files/retrained_labels.txt | labels for classes (same in Training and Test), one per line<br>
+/tf_files/Train/{one_folder_per_class}<br>
+/tf_files/Test/{one_folder_per_class}<br>
+/tf_files/label_image.py<br>
+/tf_files/label_image2_docker.py<br>
