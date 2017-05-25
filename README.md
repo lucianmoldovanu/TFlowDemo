@@ -1,4 +1,4 @@
-# TensorFlow Demo (Team 3)
+# TensorFlow Demo (for image classification)
 
 ## Prerequisites:
 * Docker installed on local machine
