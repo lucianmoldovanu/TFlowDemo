@@ -29,5 +29,7 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-app.listen(443);
-console.log('Running on http://localhost:443... REST endpoint: /classifyImage ; webapp: /');
+let port = process.env.PORT || 3000;
+
+app.listen(port);
+console.log('Running on http://localhost:port... REST endpoint: /classifyImage ; webapp: /');
