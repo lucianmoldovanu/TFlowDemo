@@ -19,4 +19,4 @@ EXPOSE 3000
 # WORKDIR "/notebooks"
 
 #CMD ["/run_jupyter.sh"]
-CMD ["nodejs", "/app/server.js"]
+#CMD ["nodejs", "/app/dummyServer.js"]
