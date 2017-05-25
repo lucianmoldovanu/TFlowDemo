@@ -5,7 +5,7 @@
 * training must be run before inference
 * _docker pull lucianmol/tflowdemo_ (Docker image that encapsulates webapp and TensorFlow)
 
-## Trainig
+## Training
 * _docker run -it -v "C:/Lucian/Projects/## 2017/2017.03 InnovChallenge/anomaly_data/anomalyWork":/tf_files lucianmol/tflowdemo bash_
 ### Inside container:
 * _cd /tensorflow_
