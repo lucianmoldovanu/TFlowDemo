@@ -29,7 +29,7 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-let port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 app.listen(port);
 console.log('Running on http://localhost:port... REST endpoint: /classifyImage ; webapp: /');
