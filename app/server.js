@@ -29,9 +29,10 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-const port = 3000; //process.env.PORT || 8080;
-//port set to 3000 because, when deploying container in CloudFoundry, lowest port is automatically used
-//beyond this port for the app, the container also exposes 6006 and 8888 (tensorboard, tensorflow admin)
+const port = process.env.PORT; // || 3000;
+//port must be set to low value because, when deploying container in CloudFoundry, lowest exposed port is automatically used
+//this container also inherits exposed ports 6006 and 8888 (tensorboard, tensorflow admin)
 
-app.listen(port);
-console.log('Running on http://localhost:' + port + '... REST endpoint: /classifyImage ; webapp: /');
+app.listen(port, function() {
+  console.log('dummyServer listening at port ' + port + '...');
+});
