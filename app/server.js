@@ -32,4 +32,4 @@ app.post('/classifyImage', function(req, res) {
 const port = process.env.PORT || 8080;
 
 app.listen(port);
-console.log('Running on http://localhost:port... REST endpoint: /classifyImage ; webapp: /');
+console.log('Running on http://localhost:' + port + '... REST endpoint: /classifyImage ; webapp: /');
