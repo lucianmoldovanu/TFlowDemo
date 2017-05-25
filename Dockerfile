@@ -13,7 +13,7 @@ RUN cd /app && npm install \
   express child_process fs multiparty
 
 # TensorFlowDemo (webapp & REST endpoint)
-EXPOSE 80
+EXPOSE 443
 # TensorBoard (6006) and iPython (8888) are already exposed
 
 # WORKDIR "/notebooks"
