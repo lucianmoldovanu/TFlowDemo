@@ -29,5 +29,5 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-app.listen(7000);
-console.log('Running on http://localhost:7000... REST endpoint: /classifyImage ; webapp: /');
+app.listen(80);
+console.log('Running on http://localhost:80... REST endpoint: /classifyImage ; webapp: /');
