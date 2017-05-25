@@ -19,10 +19,10 @@
 * for an entire folder: _python /tf_files/label_image2_docker.py /tf_files/Test_
 * _exit_
 
-## Inference (via webapp, outside Docker container)
-### Inside container:
+## Inference (via webapp)
+### On local machine
 * _docker run -it -p 3000:3000 -p 6006:6006 -v "C:/Lucian/Projects/## 2017/2017.03 InnovChallenge/anomaly_data/anomalyWork":/tf_files lucianmol/tflowdemo_ (replace with path to local folder which contains model and script, as per the above prerequisites)
-* navigate to http://localhost:3000/ in browser on the local machine (outside container)
+* browse to http://localhost:3000/ (outside container)
 
 ## General docker commands
 * clear unused images: _docker rmi $(docker images --filter "dangling=true" -q --no-trunc)_
