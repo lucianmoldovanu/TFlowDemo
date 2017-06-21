@@ -29,7 +29,7 @@ app.post('/classifyImage', function(req, res) {
     });
 });
 
-const port = process.env.PORT; // || 3000;
+const port = process.env.PORT || 3000;
 //port must be set to low value because, when deploying container in CloudFoundry, lowest exposed port is automatically used
 //this container also inherits exposed ports 6006 and 8888 (tensorboard, tensorflow admin)
 
